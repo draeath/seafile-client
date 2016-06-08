@@ -2,13 +2,13 @@
 
 Name:           seafile-client
 Version:        5.1.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
 URL:            https://www.seafile.com/
 Source0:        https://github.com/haiwen/%{name}/archive/v%{version}.tar.gz
-Source1:        %{name}.appdata.xml
+Source1:        seafile.appdata.xml
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
@@ -47,8 +47,8 @@ make CFLAGS="%{optflags}" %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 desktop-file-validate %{buildroot}/%{_datadir}/applications/seafile.desktop
 mkdir -p %{buildroot}%{_datarootdir}/appdata/
-install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml
-appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/%{name}.appdata.xml
+install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/appdata/seafile.appdata.xml
+appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.appdata.xml
 
 
 %post
@@ -79,10 +79,14 @@ fi
 %{_datadir}/icons/hicolor/48x48/apps/seafile.png
 %{_datadir}/icons/hicolor/128x128/apps/seafile.png
 %{_datadir}/pixmaps/seafile.png
-%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/appdata/seafile.appdata.xml
 
 
 %changelog
+* Wed Jun 08 2016 Richard Hughes <richard@hughsie.com> - 5.1.1-4
+- Fix AppData file to have the same application ID as the desktop file and
+  update it to a more modern format.
+
 * Fri Jun 03 2016 Nikos Roussos <comzeradd@fedoraproject.org> - 5.1.1-3
 - Update icons cache
 
