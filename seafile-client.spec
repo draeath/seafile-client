@@ -1,8 +1,8 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        5.1.1
-Release:        4%{?dist}
+Version:        6.0.0
+Release:        1%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -83,6 +83,10 @@ fi
 
 
 %changelog
+* Sun Oct 30 2016 Julien Enselme - 6.0.0-1
+- Update to 6.0.0
+- Unretire package
+
 * Wed Jun 08 2016 Richard Hughes <richard@hughsie.com> - 5.1.1-4
 - Fix AppData file to have the same application ID as the desktop file and
   update it to a more modern format.
