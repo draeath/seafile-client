@@ -39,7 +39,7 @@ to enable easy collaboration around documents within a team.
 
 
 %build
-%cmake -DUSE_QT5=ON -DCMAKE_BUILD_TYPE=Release .
+%cmake -DUSE_QT5=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_SHIBBOLETH_SUPPORT=ON .
 make CFLAGS="%{optflags}" %{?_smp_mflags}
 
 
@@ -83,6 +83,9 @@ fi
 
 
 %changelog
+* Fri Dec 09 2016 Julien Enselme - 6.0.0-3
+- Enable Shibboleth sign on
+
 * Sun Oct 30 2016 Julien Enselme - 6.0.0-2
 - Compile against compat-openssl10 until it is compatible with OpenSSL 1.1
 
