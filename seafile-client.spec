@@ -2,7 +2,7 @@
 
 Name:           seafile-client
 Version:        6.0.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
