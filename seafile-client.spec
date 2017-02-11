@@ -2,7 +2,7 @@
 
 Name:           seafile-client
 Version:        6.0.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -83,6 +83,9 @@ fi
 
 
 %changelog
+* Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 6.0.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Fri Dec 09 2016 Julien Enselme - 6.0.0-3
 - Enable Shibboleth sign on
 
