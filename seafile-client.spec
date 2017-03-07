@@ -1,8 +1,8 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        6.0.0
-Release:        4%{?dist}
+Version:        6.0.4
+Release:        1%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -83,6 +83,9 @@ fi
 
 
 %changelog
+* Tue Mar 07 2017 Julien Enselme <jujens@jujens.eu> - 6.0.4-1
+- Update to 6.0.4
+
 * Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 6.0.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
