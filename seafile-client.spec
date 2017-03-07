@@ -2,7 +2,7 @@
 
 Name:           seafile-client
 Version:        6.0.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -18,8 +18,8 @@ BuildRequires:  jansson-devel
 BuildRequires:  compat-openssl10-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  libsearpc-devel
-BuildRequires:  ccnet-devel
-BuildRequires:  seafile-devel
+BuildRequires:  ccnet-devel = %{version}
+BuildRequires:  seafile-devel = %{version}
 BuildRequires:  qt5-qtbase
 BuildRequires:  qt5-qtwebkit-devel
 BuildRequires:  qt5-qttools
@@ -83,6 +83,9 @@ fi
 
 
 %changelog
+* Tue Mar 07 2017 Julien Enselme <jujens@jujens.eu> - 6.0.4-2
+- Use correct version of ccnet and seafile
+
 * Tue Mar 07 2017 Julien Enselme <jujens@jujens.eu> - 6.0.4-1
 - Update to 6.0.4
 
