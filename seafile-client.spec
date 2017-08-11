@@ -2,7 +2,7 @@
 
 Name:           seafile-client
 Version:        6.1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -83,6 +83,9 @@ fi
 
 
 %changelog
+* Fri Aug 11 2017 Kalev Lember <klember@redhat.com> - 6.1.0-2
+- Bump and rebuild for an rpm signing issue
+
 * Thu Aug 10 2017 Julien Enselme <jujens@jujens.eu> - 6.1.0-1
 - Update to 6.1.0
 
