@@ -1,8 +1,8 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        6.1.0
-Release:        2%{?dist}
+Version:        6.1.3
+Release:        1%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -24,6 +24,8 @@ BuildRequires:  qt5-qtbase
 BuildRequires:  qt5-qtwebkit-devel
 BuildRequires:  qt5-qttools
 BuildRequires:  qt5-qttools-devel
+
+Requires:       seafile = %{version}
 
 
 %description
@@ -83,6 +85,9 @@ fi
 
 
 %changelog
+* Mon Nov 06 2017 Julien Enselme <jujens@jujens.eu> - 6.1.3-1
+- Update to 6.1.3
+
 * Fri Aug 11 2017 Kalev Lember <klember@redhat.com> - 6.1.0-2
 - Bump and rebuild for an rpm signing issue
 
