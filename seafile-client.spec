@@ -1,7 +1,7 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        6.1.3
+Version:        6.1.4
 Release:        1%{?dist}
 Summary:        Seafile cloud storage desktop client
 
@@ -85,6 +85,9 @@ fi
 
 
 %changelog
+* Wed Dec 27 2017 Julien Enselme <jujens@jujens.eu> - 6.1.4-1
+- Update to 6.1.4
+
 * Mon Nov 06 2017 Julien Enselme <jujens@jujens.eu> - 6.1.3-1
 - Update to 6.1.3
 
