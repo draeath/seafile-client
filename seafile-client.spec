@@ -2,7 +2,7 @@
 
 Name:           seafile-client
 Version:        6.1.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -52,22 +52,6 @@ mkdir -p %{buildroot}%{_datarootdir}/appdata/
 install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/appdata/seafile.appdata.xml
 appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.appdata.xml
 
-
-%post
-/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
-
-
-%postun
-if [ $1 -eq 0 ] ; then
-    /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null
-    /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-fi
-
-
-%posttrans
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-
-
 %files
 %doc README.md
 %license LICENSE
@@ -85,6 +69,9 @@ fi
 
 
 %changelog
+* Thu Jan 18 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 6.1.4-2
+- Remove obsolete scriptlets
+
 * Wed Dec 27 2017 Julien Enselme <jujens@jujens.eu> - 6.1.4-1
 - Update to 6.1.4
 
