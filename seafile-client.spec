@@ -2,7 +2,7 @@
 
 Name:           seafile-client
 Version:        6.1.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -15,7 +15,7 @@ BuildRequires:  libappstream-glib
 BuildRequires:  cmake
 BuildRequires:  sqlite-devel
 BuildRequires:  jansson-devel
-BuildRequires:  compat-openssl10-devel
+BuildRequires:  openssl-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  libsearpc-devel
 BuildRequires:  ccnet-devel = %{version}
@@ -69,6 +69,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.a
 
 
 %changelog
+* Tue Mar 13 2018 Julien Enselme <jujens@jujens.eu> - 6.1.6-2
+- Build with OpenSSL 1.1
+
 * Tue Mar 13 2018 Julien Enselme <jujens@jujens.eu> - 6.1.6-1
 - Update to 6.1.6
 
