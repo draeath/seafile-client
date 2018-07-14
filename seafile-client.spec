@@ -2,7 +2,7 @@
 
 Name:           seafile-client
 Version:        6.1.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -69,6 +69,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.a
 
 
 %changelog
+* Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 6.1.6-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Tue Mar 13 2018 Julien Enselme <jujens@jujens.eu> - 6.1.6-2
 - Build with OpenSSL 1.1
 
