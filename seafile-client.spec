@@ -18,7 +18,7 @@ BuildRequires:  jansson-devel
 BuildRequires:  openssl-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  libsearpc-devel
-BuildRequires:  ccnet-devel = %{version}
+BuildRequires:  ccnet-devel
 BuildRequires:  seafile-devel = %{version}
 BuildRequires:  qt5-qtbase
 BuildRequires:  qt5-qtwebkit-devel
