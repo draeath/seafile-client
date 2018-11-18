@@ -1,7 +1,7 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        6.2.3
+Version:        6.2.5
 Release:        1%{?dist}
 Summary:        Seafile cloud storage desktop client
 
@@ -69,6 +69,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.a
 
 
 %changelog
+* Sun Nov 18 2018 Julien Enselme <jujens@jujens.eu> - 6.2.5-1
+- Update to 6.2.5
+
 * Wed Aug 01 2018 Julien Enselme <jujens@jujens.eu> - 6.2.3-1
 - Update to 6.2.3
 
