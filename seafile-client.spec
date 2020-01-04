@@ -1,7 +1,7 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        7.0.2
+Version:        7.0.4
 Release:        1%{?dist}
 Summary:        Seafile cloud storage desktop client
 
@@ -69,6 +69,10 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.a
 
 
 %changelog
+* Sun Nov 03 2019 Julien Enselme <jujens@jujens.eu> - 7.0.4-1
+- Update to 7.0.4
+- Make this package compatible with Python3
+
 * Tue Aug 20 2019 Julien Enselme <jujens@jujens.eu> - 7.0.2-1
 - Update to 7.0.2
 
