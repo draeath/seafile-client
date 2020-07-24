@@ -1,8 +1,9 @@
+%global __cmake_in_source_build 1
 %global _hardened_build 1
 
 Name:           seafile-client
 Version:        7.0.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
@@ -69,6 +70,9 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.a
 
 
 %changelog
+* Fri Jul 24 2020 Jeff Law <law@redhat.com> - 7.0.4-3
+Use __cmake_in_source_build
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 7.0.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
