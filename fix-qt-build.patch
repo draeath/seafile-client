@@ -1,0 +1,20 @@
+diff -Naurp seafile-client-7.0.4/src/ui/events-list-view.cpp seafile-client-7.0.4/src/ui/events-list-view.cpp
+--- seafile-client-7.0.4/src/ui/events-list-view.cpp	2020-07-28 11:02:06.753157877 +0200
++++ seafile-client-7.0.4/src/ui/events-list-view.cpp	2020-07-28 11:02:49.431734333 +0200
+@@ -1,4 +1,5 @@
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QApplication>
+ #include <QPixmap>
+ #include <QToolTip>
+diff -Naurp seafile-client-7.0.4/src/ui/private-share-dialog.cpp seafile-client-7.0.4/src/ui/private-share-dialog.cpp
+--- seafile-client-7.0.4/src/ui/private-share-dialog.cpp	2020-07-28 11:02:06.753157877 +0200
++++ seafile-client-7.0.4/src/ui/private-share-dialog.cpp	2020-07-28 11:03:16.034093655 +0200
+@@ -2,6 +2,7 @@
+ #include <QCompleter>
+ #include <QLineEdit>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QResizeEvent>
+ #include <QStringList>
+ #include <QStringListModel>

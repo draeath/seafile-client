@@ -3,13 +3,14 @@
 
 Name:           seafile-client
 Version:        7.0.4
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
 URL:            https://www.seafile.com/
 Source0:        https://github.com/haiwen/%{name}/archive/v%{version}.tar.gz
 Source1:        seafile.appdata.xml
+Patch0:         fix-qt-build.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
@@ -38,7 +39,7 @@ to enable easy collaboration around documents within a team.
 
 
 %prep
-%setup -qn %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}
 
 
 %build
@@ -70,8 +71,11 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.a
 
 
 %changelog
+* Sat Jul 25 2020 Marie Loise Nolden <loise@kde.org> - 7.0.4-4
+- fix qt 5.15 build (append Patch0)
+
 * Fri Jul 24 2020 Jeff Law <law@redhat.com> - 7.0.4-3
-Use __cmake_in_source_build
+- Use __cmake_in_source_build
 
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 7.0.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
