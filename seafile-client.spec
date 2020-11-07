@@ -5,7 +5,11 @@ Version:        7.0.4
 Release:        4%{?dist}
 Summary:        Seafile cloud storage desktop client
 
-License:        ASL 2.0
+# main source:  Apache 2.0
+# quazip:       LGPL 2.1 with static linking exception
+# QtAwesome:    MIT
+# fontawesome:  OFL
+License:        ASL 2.0 and LGPLv2 and MIT and OFL
 URL:            https://www.seafile.com/
 Source0:        https://github.com/haiwen/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:        seafile.appdata.xml
@@ -28,6 +32,10 @@ BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qt5-qtwebkit-devel
 BuildRequires:  qt5-linguist
 
+# 3.x.unidentified with local changes
+Provides:       bundled(QtAwesome)
+Provides:       bundled(fontawesome-fonts) = 3.2.1
+Provides:       bundled(quazip) = 0.7.3
 Requires:       seafile = %{version}
 
 
