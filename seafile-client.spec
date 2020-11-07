@@ -1,8 +1,8 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        7.0.4
-Release:        4%{?dist}
+Version:        7.0.10
+Release:        1%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 # main source:  Apache 2.0
@@ -14,6 +14,8 @@ URL:            https://www.seafile.com/
 Source0:        https://github.com/haiwen/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:        seafile.appdata.xml
 Patch0:         fix-qt-build.patch
+
+ExclusiveArch:  %{qt5_qtwebengine_arches}
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -29,7 +31,7 @@ BuildRequires:  pkgconfig(libseafile) = %{version}
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  qt5-qtbase-devel
-BuildRequires:  qt5-qtwebkit-devel
+BuildRequires:  qt5-qtwebengine-devel
 BuildRequires:  qt5-linguist
 
 # 3.x.unidentified with local changes
@@ -83,7 +85,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/seafile.appdat
 
 
 %changelog
-* Fri Nov 06 2020 Aleksei Bavshin <alebastr@fedoraproject.org>
+* Fri Nov 06 2020 Aleksei Bavshin <alebastr@fedoraproject.org> - 7.0.10-1
+- Update to 7.0.10
 - Spec cleanup: remove unused deps, update for current guidelines
 
 * Sat Jul 25 2020 Marie Loise Nolden <loise@kde.org> - 7.0.4-4
