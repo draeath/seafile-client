@@ -1,4 +1,3 @@
-%global __cmake_in_source_build 1
 %global _hardened_build 1
 
 Name:           seafile-client
@@ -8,24 +7,26 @@ Summary:        Seafile cloud storage desktop client
 
 License:        ASL 2.0
 URL:            https://www.seafile.com/
-Source0:        https://github.com/haiwen/%{name}/archive/v%{version}.tar.gz
+Source0:        https://github.com/haiwen/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:        seafile.appdata.xml
 Patch0:         fix-qt-build.patch
 
+BuildRequires:  cmake
+BuildRequires:  gcc-c++
 BuildRequires:  desktop-file-utils
 BuildRequires:  libappstream-glib
-BuildRequires:  cmake
-BuildRequires:  sqlite-devel
-BuildRequires:  jansson-devel
-BuildRequires:  openssl-devel
-BuildRequires:  libuuid-devel
-BuildRequires:  libsearpc-devel
-BuildRequires:  ccnet-devel
-BuildRequires:  seafile-devel = %{version}
-BuildRequires:  qt5-qtbase
+BuildRequires:  make
+
+BuildRequires:  pkgconfig(sqlite3)
+BuildRequires:  pkgconfig(jansson)
+BuildRequires:  pkgconfig(libevent)
+BuildRequires:  pkgconfig(libsearpc)
+BuildRequires:  pkgconfig(libseafile) = %{version}
+BuildRequires:  pkgconfig(openssl)
+BuildRequires:  pkgconfig(zlib)
+BuildRequires:  qt5-qtbase-devel
 BuildRequires:  qt5-qtwebkit-devel
-BuildRequires:  qt5-qttools
-BuildRequires:  qt5-qttools-devel
+BuildRequires:  qt5-linguist
 
 Requires:       seafile = %{version}
 
@@ -39,20 +40,23 @@ to enable easy collaboration around documents within a team.
 
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1
 
 
 %build
-%cmake -DUSE_QT5=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_SHIBBOLETH_SUPPORT=ON .
-make CFLAGS="%{optflags}" %{?_smp_mflags}
+%cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHIBBOLETH_SUPPORT=ON
+%cmake_build
 
 
 %install
-make install DESTDIR=%{buildroot}
-desktop-file-validate %{buildroot}/%{_datadir}/applications/seafile.desktop
-mkdir -p %{buildroot}%{_datarootdir}/appdata/
-install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/appdata/seafile.appdata.xml
-appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.appdata.xml
+%cmake_install
+install -D -m 644 -pv %{SOURCE1} %{buildroot}%{_metainfodir}/seafile.appdata.xml
+
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/seafile.desktop
+appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/seafile.appdata.xml
+
 
 %files
 %doc README.md
@@ -67,10 +71,13 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/appdata/seafile.a
 %{_datadir}/icons/hicolor/48x48/apps/seafile.png
 %{_datadir}/icons/hicolor/128x128/apps/seafile.png
 %{_datadir}/pixmaps/seafile.png
-%{_datadir}/appdata/seafile.appdata.xml
+%{_metainfodir}/seafile.appdata.xml
 
 
 %changelog
+* Fri Nov 06 2020 Aleksei Bavshin <alebastr@fedoraproject.org>
+- Spec cleanup: remove unused deps, update for current guidelines
+
 * Sat Jul 25 2020 Marie Loise Nolden <loise@kde.org> - 7.0.4-4
 - fix qt 5.15 build (append Patch0)
 
