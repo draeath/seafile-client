@@ -1,0 +1,21 @@
+From c39e4f50443b818a68d804d85426f021f0a502e3 Mon Sep 17 00:00:00 2001
+From: sun <1184550842@qq.com>
+Date: Thu, 29 Apr 2021 16:17:24 +0800
+Subject: [PATCH] Fix compilation errors with glib2
+
+---
+ CMakeLists.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e9dc86a2f..42091dcfe 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -6,6 +6,7 @@ SET(SEAFILE_CLIENT_VERSION_MINOR 0)
+ SET(SEAFILE_CLIENT_VERSION_PATCH 2)
+ SET(PROJECT_VERSION "${SEAFILE_CLIENT_VERSION_MAJOR}.${SEAFILE_CLIENT_VERSION_MINOR}.${SEAFILE_CLIENT_VERSION_PATCH}")
+ ADD_DEFINITIONS(-DSEAFILE_CLIENT_VERSION=${PROJECT_VERSION})
++ADD_DEFINITIONS(-DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_26)
+ INCLUDE(FindPkgConfig)
+ 
+ ## Build crash repoter on release build as default

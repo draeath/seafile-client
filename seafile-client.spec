@@ -1,8 +1,8 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        7.0.10
-Release:        2%{?dist}
+Version:        8.0.2
+Release:        1%{?dist}
 Summary:        Seafile cloud storage desktop client
 
 # main source:  Apache 2.0
@@ -13,7 +13,7 @@ License:        ASL 2.0 and LGPLv2 and MIT and OFL
 URL:            https://www.seafile.com/
 Source0:        https://github.com/haiwen/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:        seafile.appdata.xml
-Patch0:         fix-qt-build.patch
+Patch0:         https://github.com/haiwen/%{name}/pull/1356.patch#/seafile-client-8.0.2-fix-compilation-errors-with-glib2.patch
 
 ExclusiveArch:  %{qt5_qtwebengine_arches}
 
@@ -85,6 +85,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/seafile.appdat
 
 
 %changelog
+* Wed May 26 2021 Aleksei Bavshin <alebastr@fedoraproject.org> - 8.0.2-1
+- Update to 8.0.2
+
 * Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 7.0.10-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 

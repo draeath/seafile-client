@@ -20,8 +20,8 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://www.seafile.com</url>
-  <url type="bugtracker">https://forum.seafile.de/</url>
-  <url type="help">https://www.seafile.com/en/help/</url>
+  <url type="bugtracker">https://forum.seafile.com/</url>
+  <url type="help">https://help.seafile.com/</url>
   <update_contact>daniel_dot_pan_at_seafile_dot_com</update_contact>
   <project_license>Apache-2.0</project_license>
   <developer_name>Seafile Ltd</developer_name>
