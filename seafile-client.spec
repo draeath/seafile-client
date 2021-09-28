@@ -14,7 +14,7 @@ URL:            https://www.seafile.com/
 Source0:        https://github.com/haiwen/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:        seafile.appdata.xml
 
-ExclusiveArch:  %{qt5_qtwebengine_arches}
+#ExclusiveArch:  %{qt5_qtwebengine_arches}
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -104,6 +104,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/seafile.appdat
 
 * Thu Nov 18 2021 Aleksei Bavshin <alebastr@fedoraproject.org> - 8.0.5-1
 - Update to 8.0.5
+
+* Tue Sep 28 2021 Paul Bransford <paul.bransford@epi.usf.edu> - 8.0.4-2
+- Comment out ExclusiveArch in spec since it breaks build on EL8 (and is useless in my use case)
 
 * Tue Sep 28 2021 Aleksei Bavshin <alebastr@fedoraproject.org> - 8.0.4-1
 - Update to 8.0.4
