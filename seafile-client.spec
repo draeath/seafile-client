@@ -1,7 +1,7 @@
 %global _hardened_build 1
 
 Name:           seafile-client
-Version:        8.0.4
+Version:        8.0.7
 Release:        2%{?dist}
 Summary:        Seafile cloud storage desktop client
 
@@ -84,6 +84,21 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/seafile.appdat
 
 
 %changelog
+* Sat Jul 23 2022 Fedora Release Engineering <releng@fedoraproject.org> - 8.0.7-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
+* Wed Jun 22 2022 Aleksei Bavshin <alebastr@fedoraproject.org> - 8.0.7-1
+- Update to 8.0.7
+
+* Sun Mar 06 2022 Aleksei Bavshin <alebastr@fedoraproject.org> - 8.0.6-1
+- Update to 8.0.6
+
+* Sat Jan 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 8.0.5-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
+* Thu Nov 18 2021 Aleksei Bavshin <alebastr@fedoraproject.org> - 8.0.5-1
+- Update to 8.0.5
+
 * Tue Sep 28 2021 Paul Bransford <paul.bransford@epi.usf.edu> - 8.0.4-2
 - Comment out ExclusiveArch in spec since it breaks build on EL8 (and is useless in my use case)
 
